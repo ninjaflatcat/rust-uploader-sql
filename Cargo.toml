@@ -1,0 +1,22 @@
+resolver = "2"
+
+[workspace.lints.clippy]
+all = "deny"
+nursery = "deny"
+pedantic = "warn"
+
+[profile.bench]
+lto = true
+
+[package]
+name = "uploader"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json", "multipart"] }
+tokio = { version = "1.36.0", features = ["full"] }
+config = "0.14.0"
+serde = "1.0.197"
